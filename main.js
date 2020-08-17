@@ -21,11 +21,28 @@ const isHighPriority = function(todo) {
   return false;
 }
 
+const getNameAndPriority = function(todo) {
+  return `${todo.text} - ${todo.priority}`;
+}
+
 /***********************
  * ITERATION FUNCTIONS *
  ***********************/
+const names = function(todos) {
+  const names = todos.map(getTodoName);
+  return names;
+}
 
+const priorities = function(todos) {
+  const priorities = todos.map(getPriority);
+  return priorities;
+}
 
+const namesAndPriorities = function(todos) {
+  names_priorities = todos.map(getNameAndPriority);
+
+  return names_priorities;
+}
 
 
 
