@@ -22,7 +22,16 @@ const isHighPriority = function(todo) {
 }
 
 const getNameAndPriority = function(todo) {
-  return `${todo.text} - ${todo.priority}`;
+  let description = `${todo.text} - `;
+  if(isHighPriority(todo)) {
+    description += "High";
+  }
+
+  else {
+    description += "Low";
+  }
+
+  return description;
 }
 
 /***********************
