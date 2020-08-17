@@ -13,6 +13,14 @@ const isComplete = function(todo) {
   return todo.complete;
 }
 
+const isIncomplete = function(todo) {
+  if(!todo.complete) {
+    return true;
+  }
+
+  return false;
+}
+
 const isHighPriority = function(todo) {
   if(todo.priority === 2) {
     return true;
@@ -48,9 +56,18 @@ const priorities = function(todos) {
 }
 
 const namesAndPriorities = function(todos) {
-  names_priorities = todos.map(getNameAndPriority);
-
+  const names_priorities = todos.map(getNameAndPriority);
   return names_priorities;
+}
+
+const justNotComplete = function(todos) {
+  const incompletes = todos.filter(isIncomplete);
+  return incompletes;
+}
+
+const justComplete = function(todos) {
+  const completes = todos.filter(isComplete);
+  return completes;
 }
 
 
