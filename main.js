@@ -29,6 +29,14 @@ const isHighPriority = function(todo) {
   return false;
 }
 
+const isLowPriority = function(todo) {
+  if(todo.priority === 1) {
+    return true;
+  }
+
+  return false;
+}
+
 const getNameAndPriority = function(todo) {
   let description = `${todo.text} - `;
   if(isHighPriority(todo)) {
@@ -70,16 +78,15 @@ const justComplete = function(todos) {
   return completes;
 }
 
+const priority2Only = function(todos) {
+  const highPriorities = todos.filter(isHighPriority);
+  return highPriorities;
+}
 
-
-
-
-
-
-
-
-
-
+const priority1Only = function(todos) {
+  const lowPriorities = todos.filter(isLowPriority);
+  return lowPriorities;
+}
 
 // Our code below
 
